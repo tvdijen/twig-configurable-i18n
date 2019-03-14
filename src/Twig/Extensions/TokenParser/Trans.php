@@ -7,19 +7,19 @@
 namespace JaimePerez\TwigConfigurableI18n\Twig\Extensions\TokenParser;
 
 use JaimePerez\TwigConfigurableI18n\Twig\Extensions\Node\Trans as NodeTrans;
-use Twig_Token;
-use Twig_Extensions_TokenParser_Trans;
+use Twig\Token;
+use Twig\Extensions\TokenParser\Trans;
 
-class Trans extends Twig_Extensions_TokenParser_Trans
+class Trans extends \Twig\Extensions\TokenParser\Trans
 {
     /**
      * Parses a token and returns a node.
      *
      * @param Twig_Token $token A Twig_Token instance
      *
-     * @return NodeTrans A Twig_Node instance
+     * @return NodeTrans A \Twig\Node instance
      */
-    public function parse(Twig_Token $token)
+    public function parse(\Twig\Token $token)
     {
         $parsed = parent::parse($token);
         $body = ($parsed->hasNode('body')) ? $parsed->getNode('body') : null;
