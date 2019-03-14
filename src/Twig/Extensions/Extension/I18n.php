@@ -11,7 +11,6 @@ use Twig\Extensions\Extension_I18n;
 
 class I18n extends Twig_Extensions_Extension_I18n
 {
-
     /** @var array */
     protected $filters = [];
 
@@ -24,10 +23,10 @@ class I18n extends Twig_Extensions_Extension_I18n
      */
     public function __construct()
     {
-        $this->filters = array(
-            new \Twig\SimpleFilter('trans', array($this, 'translateSingular'), ['needs_environment' => true]),
-            new \Twig\SimpleFilter('transchoice', array($this, 'translatePlural'), ['needs_environment' => true]),
-        );
+        $this->filters = [
+            new \Twig\SimpleFilter('trans', [$this, 'translateSingular'], ['needs_environment' => true]),
+            new \Twig\SimpleFilter('transchoice', [$this, 'translatePlural'], ['needs_environment' => true]),
+        ];
     }
 
 
@@ -38,7 +37,7 @@ class I18n extends Twig_Extensions_Extension_I18n
      */
     public function getTokenParsers()
     {
-        return array(new Trans());
+        return [new Trans()];
     }
 
 

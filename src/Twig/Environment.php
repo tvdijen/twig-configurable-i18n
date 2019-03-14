@@ -11,11 +11,10 @@ namespace JaimePerez\TwigConfigurableI18n\Twig;
 
 class Environment extends \Twig\Environment
 {
-
     /**
      * @var array The array of options passed to the constructor.
      */
-    protected $options = array();
+    protected $options = [];
 
 
     /**
@@ -31,7 +30,7 @@ class Environment extends \Twig\Environment
      * @param \Twig\LoaderInterface|null $loader A Twig_LoaderInterface instance.
      * @param array                      $options An array of options.
      */
-    public function __construct(\Twig\LoaderInterface $loader = null, $options = array())
+    public function __construct(\Twig\LoaderInterface $loader = null, $options = [])
     {
         parent::__construct($loader, $options);
         $this->options = $options;
