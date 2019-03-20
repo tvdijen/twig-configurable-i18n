@@ -7,7 +7,6 @@
 namespace JaimePerez\TwigConfigurableI18n\Twig\Extensions\Extension;
 
 use JaimePerez\TwigConfigurableI18n\Twig\Extensions\TokenParser\Trans;
-use Twig\Extensions\Extension_I18n;
 
 class I18n extends \Twig\Extensions\Extension_I18n
 {
